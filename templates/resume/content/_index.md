@@ -19,6 +19,7 @@ sections:
         text: Download Résumé
         url: uploads/resume.pdf
     design:
+      show_status: false
       banner:
         # Upload your cover image to the `assets/media/` folder and reference it here
         filename: kalen-emsley-Bkci_8qcdvQ-unsplash.jpg

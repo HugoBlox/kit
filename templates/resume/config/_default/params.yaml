@@ -83,21 +83,21 @@ hugoblox:
   header:
     enable: true
     # Header style variant
-    style: navbar                       # navbar | navbar-simple | minimal
+    style: floating-theme-toggler                       # navbar | navbar-simple | minimal
     # Stick to top on scroll
     sticky: true
     # Menu alignment
     align: center                       # left | center | right
     # Feature toggles
-    search: true
+    search: false
     theme_toggle: true
-    theme_picker: false
+    theme_picker: true
     language_switcher: true
     # Call-to-action button
     cta:
-      enable: false
-      text: ""
-      url: ""
+      enable: true
+      text: "Download Résumé"
+      url: "uploads/resume.pdf"
 
   # ────────────────────────────────────────────────────────────────────────────
   # FOOTER

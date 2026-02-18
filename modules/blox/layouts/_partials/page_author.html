@@ -16,7 +16,7 @@
 {{ if $authors }}
   {{ range $idx, $slug := $authors }}
     {{ $profile := partial "functions/get_author_profile" $slug }}
-    {{ if $profile }}
+    {{ if $profile.has_data }}
       {{ partial "page_author_card" (dict "profile" $profile "page" .) }}
     {{ end }}
   {{ end }}

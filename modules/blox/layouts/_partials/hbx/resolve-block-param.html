@@ -6,7 +6,9 @@
 {{- $block_id := "" -}}
 {{- $using_legacy := false -}}
 
-{{- if $config.block -}}
+{{- if $config.style -}}
+  {{- $block_id = $config.style -}}
+{{- else if $config.block -}}
   {{- $block_id = $config.block -}}
 {{- else if $config.blox -}}
   {{- $block_id = $config.blox -}}

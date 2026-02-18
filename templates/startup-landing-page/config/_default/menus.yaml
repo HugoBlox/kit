@@ -12,9 +12,83 @@ main:
   - name: Solutions
     url: /#solutions
     weight: 30
+  - name: Changelog
+    url: /changelog/
+    weight: 35
   - name: Resources
     weight: 40
     hasChildren: true
   - parent: Resources
     name: Blog
     url: blog/
+
+# Footer links (4-column layout)
+#   Top-level items become column headings, children become links.
+footer:
+  - name: Product
+    weight: 10
+  - parent: Product
+    name: Features
+    url: /#features
+    weight: 10
+  - parent: Product
+    name: Solutions
+    url: /#solutions
+    weight: 20
+  - parent: Product
+    name: Pricing
+    url: "#"
+    weight: 30
+  - parent: Product
+    name: Changelog
+    url: /changelog/
+    weight: 40
+
+  - name: Company
+    weight: 20
+  - parent: Company
+    name: About
+    url: "#"
+    weight: 10
+  - parent: Company
+    name: Blog
+    url: /blog/
+    weight: 20
+  - parent: Company
+    name: Careers
+    url: "#"
+    weight: 30
+  - parent: Company
+    name: Contact
+    url: "#"
+    weight: 40
+
+  - name: Resources
+    weight: 30
+  - parent: Resources
+    name: Documentation
+    url: "#"
+    weight: 10
+  - parent: Resources
+    name: Help Center
+    url: "#"
+    weight: 20
+  - parent: Resources
+    name: Community
+    url: "#"
+    weight: 30
+  - parent: Resources
+    name: Status
+    url: "#"
+    weight: 40
+
+  - name: Legal
+    weight: 40
+  - parent: Legal
+    name: Privacy Policy
+    url: /privacy/
+    weight: 10
+  - parent: Legal
+    name: Terms of Service
+    url: /terms/
+    weight: 20

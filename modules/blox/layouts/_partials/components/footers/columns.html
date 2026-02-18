@@ -1,0 +1,82 @@
+{{ $branding := partialCached "functions/get_branding" . "branding" }}
+{{- $logo_height := site.Params.hugoblox.footer.logo_height | default 36 -}}
+{{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" $logo_height) "footer_logo" }}
+{{- $show_logo := site.Params.hugoblox.footer.show_logo | default true -}}
+{{- $show_title := site.Params.hugoblox.footer.show_title | default true -}}
+{{- $show_tagline := site.Params.hugoblox.footer.show_tagline | default true -}}
+{{- $footer_title := site.Params.hugoblox.footer.title | default $branding.name -}}
+<footer aria-labelledby="footer-heading">
+  <span id="footer-heading" class="sr-only">Footer</span>
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-16">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8 xl:items-start">
+      <div class="xl:col-span-1">
+        {{ if $show_logo }}
+        {{ with $logo.resource }}
+          {{ if $logo.is_svg }}
+            <div class="footer-logo" style="height: {{ $logo_height }}px;">
+              {{- .Content | safeHTML -}}
+            </div>
+            <style>.footer-logo svg { height: 100%; width: auto; }</style>
+          {{ else }}
+            <img
+              decoding="async"
+              width="{{ .Width }}"
+              height="{{ .Height }}"
+              src="{{ .RelPermalink }}"
+              alt="{{ $branding.name }}" />
+          {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ if $show_title }}
+        <a class="text-lg font-bold tracking-tighter text-primary-600 transition duration-500 ease-in-out lg:pr-8 dark:text-primary-200" href="{{site.Home.RelPermalink}}">
+          {{ $footer_title }}
+        </a>
+        {{ end }}
+        {{ if $show_tagline }}
+        <p class="mt-2 w-1/2 text-sm text-gray-500 dark:text-gray-300">{{ site.Params.hugoblox.identity.tagline | default "" }}</p>
+        {{ end }}
+        {{- $show_social := site.Params.hugoblox.footer.show_social | default true -}}
+        {{ if $show_social }}
+        {{ with site.Params.hugoblox.identity.social.links }}
+        <div class="mt-4 text-xl">
+          {{ partial "social_links" (dict "Params" (dict "profiles" .)) }}
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0 md:grid-cols-{{ len .Site.Menus.footer }}">
+
+          {{ $menu := .Site.Menus.footer }}
+          {{ range $index, $menuItem := $menu }}
+          <div>
+            <h3 class="text-sm font-bold tracking-wider text-primary-500 uppercase dark:text-primary-300">{{ $menuItem.Name }}</h3>
+            <ul role="list" class="mt-4 space-y-2">
+              {{ range $childIndex, $childMenuItem := $menuItem.Children }}
+              {{ $url := .URL | relLangURL }}
+              <li>
+                <a href="{{ $url }}"
+                class="text-base font-normal text-gray-500 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-300"
+                   {{ if findRE `^http` .URL }}
+                   target="_blank" rel="noopener"
+                   {{ end }}
+                   >
+                  {{ $childMenuItem.Name }}
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-16">
+    <div class="flex flex-wrap items-baseline">
+      <span class="mt-2 text-sm font-light text-gray-500 dark:text-gray-300">
+        {{/* Display copyright license. */}}
+        {{ partial "site_footer_license" . }}
+      </span>
+    </div>
+  </div>
+</footer>

@@ -9,6 +9,7 @@ import { h } from "preact";
 export const Icon = ({ svg, attributes }) => {
   if (!svg) return null;
 
+  // Clean the SVG string: decode HTML entities and TRIM whitespace
   let decoded = String(svg)
     .replace(/\\u003c/gi, "<")
     .replace(/\\u003e/gi, ">")
@@ -17,20 +18,15 @@ export const Icon = ({ svg, attributes }) => {
     .replace(/&gt;/gi, ">")
     .replace(/&quot;/gi, '"')
     .replace(/&#34;/gi, '"')
-    .replace(/&amp;/gi, "&");
+    .replace(/&amp;/gi, "&")
+    .trim();
 
   const hasWrapper = /<svg[\s>]/i.test(decoded);
 
   if (hasWrapper) {
-    if (/<svg[^>]*class=/i.test(decoded)) {
-      decoded = decoded.replace(/<svg([^>]*?)class="([^"]*)"([^>]*)>/i, '<svg$1class="$2 inline-block w-4 h-4"$3>');
-    } else {
-      decoded = decoded.replace(/<svg\b/i, '<svg class="inline-block w-4 h-4"');
-    }
-
     const wrapperProps = {
       ...attributes,
-      class: `inline-block ${attributes?.class || ""}`.trim(),
+      class: `flex items-center justify-center ${attributes?.class || ""}`.trim(),
     };
 
     // eslint-disable-next-line lint/security/noDangerouslySetInnerHtml

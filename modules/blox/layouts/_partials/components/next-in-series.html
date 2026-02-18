@@ -1,5 +1,5 @@
 {{ if .Params.pager | default true }}
-  {{ if or .NextInSection .PrevInSection }}
+  {{ if and .Section (or .NextInSection .PrevInSection) }}
     {{ $next := .NextInSection }}
     {{ $prev := .PrevInSection }}
     {{ if (eq (.Scratch.Get "invert_pager") true) | default .Params.invert_pager | default false }}

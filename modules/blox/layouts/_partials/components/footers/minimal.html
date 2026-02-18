@@ -12,16 +12,31 @@
 </div>
 {{ end }}
 
-{{ if or (site.GetPage "/terms.md") (site.GetPage "/privacy.md") }}
-<p class="text-center">
-  {{ with site.GetPage "/privacy.md" }}
-  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+{{/* Footer nav links - single level */}}
+{{ $menu := .Site.Menus.footer }}
+{{ with $menu }}
+<nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 py-4">
+  {{ range $index, $menuItem := . }}
+  <a href="{{ $menuItem.URL | relLangURL }}"
+     class="text-base font-medium text-gray-500 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-300"
+     {{ if findRE `^http` $menuItem.URL }}
+     target="_blank" rel="noopener"
+     {{ end }}
+  >
+    {{ $menuItem.Name }}
+  </a>
   {{ end }}
-  {{ with site.GetPage "/terms.md" }}
-  {{ if site.GetPage "/privacy.md" }} &middot; {{ end }}
-  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
-  {{ end }}
-</p>
+</nav>
+{{ end }}
+
+{{/* Social links */}}
+{{- $show_social := site.Params.hugoblox.footer.show_social | default true -}}
+{{ if $show_social }}
+{{ with site.Params.hugoblox.identity.social.links }}
+<div class="flex justify-center py-4 text-xl">
+  {{ partial "social_links" (dict "Params" (dict "profiles" .)) }}
+</div>
+{{ end }}
 {{ end }}
 
 {{ with site.Params.hugoblox.footer.text }}

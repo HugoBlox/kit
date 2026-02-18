@@ -10,7 +10,7 @@
       {{ $target = "target=\"_blank\" rel=\"noopener\" rel=\"me noopener noreferrer\"" }}
     {{ end }}
     <a
-      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      class="pr-4 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
       style="will-change:transform;"
       href="{{ $link | safeURL }}"
       {{ $target | safeHTMLAttr }}

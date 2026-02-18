@@ -17,8 +17,7 @@
   "type" $block_type
 }}
 
-{{/* If an icon is specified, fetch its SVG data and add it to the props */}}
-{{/* TODO: Generalize this to work with all block icon fields */}}
+{{/* Resolve icon for primary_action (hero, cta blocks) */}}
 {{ with $block.content.primary_action.icon }}
   {{ $icon_data := partial "functions/get_icon_data" (dict "name" .) }}
   {{ if $icon_data }}
@@ -26,12 +25,129 @@
   {{ end }}
 {{ end }}
 
+{{/* Resolve icon for single button (cta-card) */}}
+{{ with $block.content.button.icon }}
+  {{ $icon_data := partial "functions/get_icon_data" (dict "name" .) }}
+  {{ if $icon_data }}
+    {{ $props = merge $props (dict "button_icon_svg" $icon_data) }}
+  {{ end }}
+{{ end }}
+
+{{/* Resolve per-item icons (stats, features, etc.) into an icon_svgs map */}}
+{{ $icon_svgs := dict }}
+{{ with $block.content.items }}
+  {{ range . }}
+    {{ with .icon }}
+      {{ if not (index $icon_svgs .) }}
+        {{ $icon_data := partial "functions/get_icon_data" (dict "name" .) }}
+        {{ if $icon_data }}
+          {{ $icon_svgs = merge $icon_svgs (dict . $icon_data) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $icon_svgs) 0 }}
+  {{ $props = merge $props (dict "icon_svgs" $icon_svgs) }}
+{{ end }}
+
+{{/* Resolve per-item images via Hugo's image pipeline */}}
+{{/* Thumbnail mode (testimonials): Fill 96x96 webp */}}
+{{/* Responsive mode (cta-image-paragraph): srcset with breakpoints */}}
+{{ $item_images := dict }}
+{{ with $block.content.items }}
+  {{ range $idx, $item := . }}
+    {{ with .image }}
+      {{ $image_path := strings.TrimSpace (printf "%v" .) }}
+      {{ $is_remote := or (strings.HasPrefix $image_path "http://") (strings.HasPrefix $image_path "https://") }}
+
+      {{/* Resolve the image resource */}}
+      {{ $image_resource := false }}
+      {{ $fallback_url := "" }}
+
+      {{ if $is_remote }}
+        {{ $remote := try (resources.GetRemote $image_path) }}
+        {{ if and $remote (not $remote.Err) }}
+          {{ $image_resource = $remote.Value }}
+        {{ else }}
+          {{ $fallback_url = $image_path }}
+        {{ end }}
+      {{ else }}
+        {{ $normalized := $image_path }}
+        {{ $normalized = strings.TrimPrefix "/" $normalized }}
+        {{ $normalized = strings.TrimPrefix "./" $normalized }}
+        {{ $normalized = strings.TrimPrefix "assets/" $normalized }}
+        {{ $normalized = strings.TrimPrefix "media/" $normalized }}
+        {{ $normalized = path.Clean $normalized }}
+
+        {{ if and $normalized (ne $normalized ".") }}
+          {{ with $page }}
+            {{ $image_resource = (.Resources.ByType "image").GetMatch $normalized }}
+          {{ end }}
+          {{ if not $image_resource }}
+            {{ $image_resource = resources.Get (path.Join "media" $normalized) }}
+          {{ end }}
+          {{ if not $image_resource }}
+            {{ $fallback_url = printf "/media/%s" $normalized }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{ $img_data := dict }}
+      {{ if $image_resource }}
+        {{ if eq $block_type "cta-image-paragraph" }}
+          {{/* Responsive mode: generate srcset via process_responsive_image */}}
+          {{ if ne $image_resource.MediaType.SubType "gif" }}
+            {{ $responsive := partial "functions/process_responsive_image.html" (dict 
+                "image" $image_resource 
+                "mode" "fit"
+                "sizes" (slice 400 600 800 1200)
+            ) }}
+            {{ $img_data = dict "srcset" $responsive.srcset "src" $responsive.fallback.RelPermalink "width" $responsive.fallback.Width "height" $responsive.fallback.Height }}
+          {{ else }}
+            {{ $img_data = dict "src" $image_resource.RelPermalink "width" $image_resource.Width "height" $image_resource.Height }}
+          {{ end }}
+        {{ else }}
+          {{/* Thumbnail mode (testimonials, etc.): Fill 96x96 */}}
+          {{ $processed := $image_resource.Process "Fill 96x96 Center webp" }}
+          {{ $img_data = dict "src" $processed.RelPermalink }}
+        {{ end }}
+      {{ else if $fallback_url }}
+        {{ $img_data = dict "src" $fallback_url }}
+      {{ end }}
+
+      {{ if $img_data }}
+        {{ $item_images = merge $item_images (dict (printf "%d" $idx) $img_data) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $item_images) 0 }}
+  {{ $props = merge $props (dict "item_images" $item_images) }}
+{{ end }}
+
+{{/* Resolve per-item feature_icon (cta-image-paragraph) */}}
+{{ with $block.content.items }}
+  {{ range . }}
+    {{ with .feature_icon }}
+      {{ if not (index $icon_svgs .) }}
+        {{ $icon_data := partial "functions/get_icon_data" (dict "name" .) }}
+        {{ if $icon_data }}
+          {{ $icon_svgs = merge $icon_svgs (dict . $icon_data) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $icon_svgs) 0 }}
+  {{ $props = merge $props (dict "icon_svgs" $icon_svgs) }}
+{{ end }}
+
 {{/* Convert props to JSON for client-side rendering */}}
 {{ $propsJSON := $props | jsonify }}
 
 {{/* Render a container that Preact will populate */}}
 <div 
-  id="{{ $block_id }}"
   class="{{ $block_type }}-block-container preact-block"
   data-block-type="{{ $block_type }}"
   data-props='{{ $propsJSON | safeHTML }}'

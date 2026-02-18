@@ -1,11 +1,15 @@
 {{ $branding := partialCached "functions/get_branding" . "branding" }}
 {{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" 36) "navbar_logo" }}
+{{- $show_logo := site.Params.hugoblox.header.show_logo | default true -}}
+{{- $show_title := site.Params.hugoblox.header.show_title | default true -}}
+{{- $navbar_title := site.Params.hugoblox.header.title | default $branding.name -}}
 <header id="site-header" class="header">
   <nav class="navbar px-3 flex justify-start">
     <div class="order-0 h-full">
       <!-- Brand -->
       <a class="navbar-brand" href="{{ site.Home.RelPermalink }}" title="{{ $branding.site_title }}">
         {{/* Auto-detect logo from assets/media/logo.{svg,png} */}}
+        {{ if $show_logo }}
         {{ with $logo.resource }}
           {{ if $logo.is_svg }}
             {{- .Content | safeHTML -}}
@@ -20,8 +24,9 @@
               alt="{{ $branding.name }}" />
           {{ end }}
         {{ end }}
+        {{ end }}
         {{/* Display brand name */}}
-        {{ $branding.name }}
+        {{ if $show_title }}{{ $navbar_title }}{{ end }}
       </a>
     </div>
     <!-- Mobile menu -->

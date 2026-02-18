@@ -32,6 +32,7 @@
   "scripts": {
     "prod": "scripts/view-starter-prod.sh",
     "dev": "scripts/view-starter-dev.sh",
+    "dev:stop": "lsof -ti :8081 | xargs kill -9",
     "test": "scripts/view-test.sh",
     "lint": "biome check --reporter=summary .",
     "lint:code": "biome check --reporter=summary . --linter-enabled=true --formatter-enabled=false",

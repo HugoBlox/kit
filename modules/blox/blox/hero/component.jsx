@@ -3,7 +3,7 @@
  * Used for both SSR and client-side hydration
  */
 
-import {Icon} from "../../shared/components/Icon.jsx";
+import { Icon } from "../../shared/components/Icon.jsx";
 
 // Simple markdown renderer
 export function renderText(text) {
@@ -16,7 +16,7 @@ export function renderText(text) {
 
 // Process URLs
 export function processUrl(url) {
-  if (!url) return {href: "#"};
+  if (!url) return { href: "#" };
 
   if (url.startsWith("http://") || url.startsWith("https://")) {
     return {
@@ -27,18 +27,18 @@ export function processUrl(url) {
   }
 
   if (url.startsWith("#")) {
-    return {href: url};
+    return { href: url };
   }
 
-  return {href: url};
+  return { href: url };
 }
 
 // Hero Block Component - Single implementation
-export const HeroBlock = ({content, design, id, icon_svg}) => {
+export const HeroBlock = ({ content, design, id, icon_svg }) => {
   const paddingClasses = design?.no_padding ? "" : "py-32 sm:py-48 lg:py-56";
 
   return (
-    <div class="relative isolate px-6 pt-14 lg:px-8" id={id}>
+    <div class="relative isolate px-6 pt-14 lg:px-8">
       <div class={`mx-auto max-w-2xl ${paddingClasses}`}>
         {/* Announcement Banner */}
         {content.announcement?.text && (
@@ -73,7 +73,7 @@ export const HeroBlock = ({content, design, id, icon_svg}) => {
           {content.title && (
             <h1
               class="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl"
-              dangerouslySetInnerHTML={{__html: renderText(content.title)}}
+              dangerouslySetInnerHTML={{ __html: renderText(content.title) }}
             />
           )}
 
@@ -81,7 +81,7 @@ export const HeroBlock = ({content, design, id, icon_svg}) => {
           {content.text && (
             <p
               class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
-              dangerouslySetInnerHTML={{__html: renderText(content.text)}}
+              dangerouslySetInnerHTML={{ __html: renderText(content.text) }}
             />
           )}
 

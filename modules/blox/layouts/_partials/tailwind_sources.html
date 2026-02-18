@@ -27,32 +27,55 @@ and Tailwind's real filesystem scanner.
 {{ $paths = $paths | append `assets/js/preact-built/**/*.js` }}
 
 {{/*
-3. Inline sources: extract class attributes from Preact JSX/TSX and embed them
-   directly so Tailwind can always see them regardless of FS layout.
+3. Comprehensive class extraction from Preact JSX/TSX source files.
+
+   Hugo's virtual filesystem mounts block JSX/TSX into assets/js/hbx/blocks/.
+   Tailwind's @source file paths only work on the real filesystem, but these
+   files exist only in Hugo's virtual FS (or in a module cache for remote modules).
+   So we read the file content via resources.Match and extract class candidates inline.
+
+   Strategy: Extract ALL string literal content — not just class= attributes.
+   This catches classes in any pattern:
+     - Static attrs:     class="gap-8 items-center"
+     - JSX expressions:  class={"gap-8 items-center"}
+     - Template literals: class={`gap-8 ${cond ? "md:grid" : ""}`}
+     - Utility fns:      cn("gap-8", condition && "md:grid-cols-2")
+
+   Tailwind's scanner automatically ignores non-class tokens (import paths,
+   error messages, etc.), so false positives are harmless.
 */}}
-{{ $jsx_files := resources.Match "js/hbx/**/*.jsx" }}
-{{ $tsx_files := resources.Match "js/hbx/**/*.tsx" }}
+{{ $all_jsx := resources.Match "js/hbx/**/*.jsx" }}
+{{ $all_tsx := resources.Match "js/hbx/**/*.tsx" }}
 
 {{ $extracted_classes := slice }}
-{{ range $f := $jsx_files }}
+{{ range $f := $all_jsx | append $all_tsx }}
   {{ $code := $f.Content }}
-  {{ $matches := findRE `class(?:Name)?\s*=\s*"([^"]+)"` $code }}
-  {{ range $m := $matches }}
-    {{ $cls := replaceRE `^class(?:Name)?\s*=\s*"([^"]+)"$` `$1` $m }}
-    {{ $classes := split $cls " " }}
-    {{ range $class := $classes }}
-      {{ $extracted_classes = $extracted_classes | append $class }}
+
+  {{/* A) Extract content of all double-quoted strings */}}
+  {{ $dq_matches := findRE `"[^"]*"` $code }}
+  {{ range $m := $dq_matches }}
+    {{ $str := strings.TrimPrefix `"` (strings.TrimSuffix `"` $m) }}
+    {{ range split $str " " }}
+      {{ $t := strings.TrimSpace . }}
+      {{/* Filter out tokens with unsafe characters (braces, quotes, parens) */}}
+      {{ if and $t (not (findRE `[\{\}\(\)"';]` $t)) }}
+        {{ $extracted_classes = $extracted_classes | append $t }}
+      {{ end }}
     {{ end }}
   {{ end }}
-{{ end }}
-{{ range $f := $tsx_files }}
-  {{ $code := $f.Content }}
-  {{ $matches := findRE `class(?:Name)?\s*=\s*"([^"]+)"` $code }}
-  {{ range $m := $matches }}
-    {{ $cls := replaceRE `^class(?:Name)?\s*=\s*"([^"]+)"$` `$1` $m }}
-    {{ $classes := split $cls " " }}
-    {{ range $class := $classes }}
-      {{ $extracted_classes = $extracted_classes | append $class }}
+
+  {{/* B) Extract static parts of template literals (backtick strings) */}}
+  {{/* Removes ${...} interpolations, keeping surrounding text */}}
+  {{ $bt_matches := findRE "`[^`]*`" $code }}
+  {{ range $m := $bt_matches }}
+    {{ $str := strings.TrimPrefix "`" (strings.TrimSuffix "`" $m) }}
+    {{ $static := replaceRE `\$\{[^}]*\}` " " $str }}
+    {{ range split $static " " }}
+      {{ $t := strings.TrimSpace . }}
+      {{/* Filter out tokens with unsafe characters (braces, quotes, parens) */}}
+      {{ if and $t (not (findRE `[\{\}\(\)"';]` $t)) }}
+        {{ $extracted_classes = $extracted_classes | append $t }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}

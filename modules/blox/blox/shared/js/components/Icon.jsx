@@ -1,12 +1,12 @@
 // biome-ignore lint/correctness/noUnusedImports: Classic Preact JSX runtime may require 'h' for JSX transform
-import {h} from "preact";
+import { h } from "preact";
 
 /**
  * Icon component
  * Renders an SVG icon from a raw SVG string passed from Hugo.
  * Decodes JSON-escaped sequences (\u003c) and HTML entities (&lt;, &quot;, &#34;).
  */
-export const Icon = ({svg, attributes}) => {
+export const Icon = ({ svg, attributes }) => {
   if (!svg) return null;
 
   let decoded = String(svg)
@@ -28,8 +28,13 @@ export const Icon = ({svg, attributes}) => {
       decoded = decoded.replace(/<svg\b/i, '<svg class="inline-block w-4 h-4"');
     }
 
+    const wrapperProps = {
+      ...attributes,
+      class: `inline-block ${attributes?.class || ""}`.trim(),
+    };
+
     // eslint-disable-next-line lint/security/noDangerouslySetInnerHtml
-    return <span class="inline-block" dangerouslySetInnerHTML={{__html: decoded}} />;
+    return <span {...wrapperProps} dangerouslySetInnerHTML={{ __html: decoded }} />;
   }
 
   const finalAttributes = {
@@ -44,5 +49,5 @@ export const Icon = ({svg, attributes}) => {
     .join(" ");
 
   // eslint-disable-next-line lint/security/noDangerouslySetInnerHtml
-  return <span class="inline-block" dangerouslySetInnerHTML={{__html: `<svg ${attrs}>${decoded}</svg>`}} />;
+  return <span class="inline-block" dangerouslySetInnerHTML={{ __html: `<svg ${attrs}>${decoded}</svg>` }} />;
 };

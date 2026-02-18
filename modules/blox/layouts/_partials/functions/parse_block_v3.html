@@ -177,7 +177,7 @@
     {{ if ne $bg_img.MediaType.SubType "svg" }}
       {{ $bg_img = $bg_img.Fit "1920x1920 webp" }}
     {{ end }}
-    {{ $image_layer := printf "url('%s')" $bg_img.Permalink }}
+    {{ $image_layer := printf "url('%s')" $bg_img.RelPermalink }}
     {{ $background_layers = $background_layers | append $image_layer }}
   {{ end }}
 {{ end }}

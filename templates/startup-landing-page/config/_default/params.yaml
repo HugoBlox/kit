@@ -13,11 +13,11 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Your Name"
+    name: "Company Name"
     # Legal entity for copyright notices (defaults to name if not set)
     organization: ""
     # Schema.org type for structured data
-    type: person                        # person | organization | local_business
+    type: organization                        # person | organization | local_business
     # Short tagline displayed on your site
     tagline: ""
     # Site meta description for search engines and social sharing
@@ -83,9 +83,15 @@ hugoblox:
   header:
     enable: true
     # Header style variant
-    style: navbar                       # navbar | navbar-simple | minimal
+    block: navbar                       # navbar | navbar-simple
     # Stick to top on scroll
     sticky: true
+    # Show logo in navbar
+    show_logo: false
+    # Show site title text in navbar
+    show_title: true
+    # Override navbar title (defaults to identity.name)
+    title: ""
     # Menu alignment
     align: center                       # left | center | right
     # Feature toggles

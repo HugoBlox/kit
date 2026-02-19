@@ -90,22 +90,20 @@
   line-height: 1.2;
 
   /* Subtle gradient text for premium feel */
-  background: linear-gradient(135deg,
-      var(--color-gray-500) 0%,
-      var(--color-gray-400) 100%);
+  background: linear-gradient(135deg, var(--color-gray-500) 0%, var(--color-gray-400) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 
   /* Smooth reveal animation */
   opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .dark .hb-ruby-name rt {
-  background: linear-gradient(135deg,
-      var(--color-gray-400) 0%,
-      var(--color-gray-300) 100%);
+  background: linear-gradient(135deg, var(--color-gray-400) 0%, var(--color-gray-300) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

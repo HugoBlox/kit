@@ -5,18 +5,12 @@
   "postCreateCommand": "pnpm --version && hugo version",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "ownable.ownable"
-      ]
+      "extensions": ["ownable.ownable"]
     }
   },
-  "mounts": [
-    "source=pnpm-store,target=/home/vscode/.local/share/pnpm,type=volume"
-  ],
+  "mounts": ["source=pnpm-store,target=/home/vscode/.local/share/pnpm,type=volume"],
   "remoteUser": "vscode",
-  "forwardPorts": [
-    1313
-  ],
+  "forwardPorts": [1313],
   "portsAttributes": {
     "1313": {
       "label": "Hugo Server"

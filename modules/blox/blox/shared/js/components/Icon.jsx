@@ -1,5 +1,5 @@
 // biome-ignore lint/correctness/noUnusedImports: Classic Preact JSX runtime may require 'h' for JSX transform
-import { h } from "preact";
+import {h} from "preact";
 
 /**
  * Icon component
@@ -13,7 +13,7 @@ import { h } from "preact";
  *   the SVG fills that container with height:100%;width:auto instead.
  * - If the caller provides explicit w-/h- Tailwind classes, those take precedence.
  */
-export const Icon = ({ svg, attributes }) => {
+export const Icon = ({svg, attributes}) => {
   if (!svg) return null;
 
   // Clean the SVG string: decode HTML entities and TRIM whitespace
@@ -35,9 +35,7 @@ export const Icon = ({ svg, attributes }) => {
     // use 100% to fill the container; otherwise default to 1em for self-sizing.
     const callerStyle = attributes?.style || "";
     const hasExplicitHeight = /height\s*:/i.test(String(callerStyle));
-    const svgStyle = hasExplicitHeight
-      ? "height:100%;width:auto"
-      : "height:1em;width:auto";
+    const svgStyle = hasExplicitHeight ? "height:100%;width:auto" : "height:1em;width:auto";
 
     decoded = decoded.replace(/^(<svg\b)/i, `$1 style="${svgStyle}"`);
 
@@ -47,7 +45,7 @@ export const Icon = ({ svg, attributes }) => {
     };
 
     // eslint-disable-next-line lint/security/noDangerouslySetInnerHtml
-    return <span {...wrapperProps} dangerouslySetInnerHTML={{ __html: decoded }} />;
+    return <span {...wrapperProps} dangerouslySetInnerHTML={{__html: decoded}} />;
   }
 
   const finalAttributes = {
@@ -62,5 +60,5 @@ export const Icon = ({ svg, attributes }) => {
     .join(" ");
 
   // eslint-disable-next-line lint/security/noDangerouslySetInnerHtml
-  return <span class="inline-block" dangerouslySetInnerHTML={{ __html: `<svg ${attrs}>${decoded}</svg>` }} />;
+  return <span class="inline-block" dangerouslySetInnerHTML={{__html: `<svg ${attrs}>${decoded}</svg>`}} />;
 };

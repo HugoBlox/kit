@@ -16,13 +16,12 @@
       "!**/vendor",
       "!**/*.html",
       "!**/layouts/**/*.html",
-      "!**/layouts/**/*.htm",
       "!**/*.webmanifest",
       "!**/*.backlinks.json",
       "!**/hugo_stats.json",
       "!**/*.code-workspace",
       "!**/modules/blox/data/icons/devicon.json",
-      "!**/templates",
+      "!**/templates/**/*.html",
       "!**/test",
       "!**/modules/**/package.json",
       "!**/assets/jsconfig.json",
@@ -64,7 +63,13 @@
       }
     }
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "css": {
     "parser": {
       "tailwindDirectives": true

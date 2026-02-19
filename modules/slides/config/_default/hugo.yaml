@@ -1,3 +1,10 @@
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: layouts
+      target: layouts
+
 outputFormats:
   Present:
     mediaType: text/html

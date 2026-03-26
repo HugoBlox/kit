@@ -27,7 +27,7 @@ cascade:
       kind: page
     pager: true
     editable: true
-    hide_date: false
+    show_date: true
     show_date_updated: true
     reading_time: true
     commentable: true

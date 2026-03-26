@@ -1,7 +1,7 @@
 ---
 title: Uses
 date: 2023-10-24
-hide_date: true
+show_date: false
 reading_time: false
 ---
 

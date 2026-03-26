@@ -59,7 +59,7 @@
       {{ $display_date := .Params.event_start | default .Date }}
       <div class="mt-4 mb-16">
       <div class="text-gray-500 dark:text-gray-300 text-sm flex items-center flex-wrap gap-y-2">
-        {{- if $display_date | and (not .Params.hide_date) -}}
+        {{- if $display_date | and (.Params.show_date | default true) -}}
         <span class="mr-1">{{- (time $display_date) | time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") -}}</span>
         {{- if .Params.authors }}<span class="mx-1">·</span>{{ end -}}
         {{- end -}}

@@ -1,7 +1,7 @@
 {{- $page := .page -}}
 {{- $summary := .summary -}}
 
-{{- $language := $page.Language.LanguageCode | default site.LanguageCode | default "en" -}}
+{{- $language := $page.Language.Locale | default site.Language.Locale | default "en" -}}
 {{- $description := $summary | default ($page.Params.summary | default $page.Summary) -}}
 {{- $description = $description | plainify -}}
 

@@ -3,7 +3,7 @@
 {
   "name": "{{site.Title}}",
   "short_name": "{{site.Title}}",
-  "lang": "{{ site.LanguageCode | default "en-us" }}",
+  "lang": "{{ site.Language.Locale | default "en-us" }}",
   "theme_color": "{{ $theme_color }}",
   "background_color": "{{ $theme_color }}",
   "icons": [{

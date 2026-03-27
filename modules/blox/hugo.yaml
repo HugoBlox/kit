@@ -20,7 +20,7 @@ markup:
     parser:
       # Support Latex math(?)
       attribute:
-        block: true  # For callouts as quote blocks
+        block: true # For callouts as quote blocks
         title: true
     extensions:
       # Support Latex math
@@ -98,12 +98,12 @@ imaging:
   hint: picture
 params:
   locale:
-    date_format: 'Jan 2, 2006'
-    time_format: '3:04 PM'
+    date_format: "Jan 2, 2006"
+    time_format: "3:04 PM"
     address_format: en-us
 module:
   hugoVersion:
-    min: '0.153.0'
+    min: "0.158.0"
     extended: true
   imports:
     - path: github.com/HugoBlox/kit/modules/analytics
@@ -130,22 +130,22 @@ module:
     - source: blox
       target: layouts/_partials/hbx/blocks
       files:
-        - '**/block.html'
+        - "**/block.html"
 
     # BLOX B) Client islands (compiled with js.Build/js.Batch)
     - source: blox
       target: assets/js/hbx/blocks
       files:
-        - '**/*.js'
-        - '**/*.ts'
-        - '**/*.jsx'
-        - '**/*.tsx'
+        - "**/*.js"
+        - "**/*.ts"
+        - "**/*.jsx"
+        - "**/*.tsx"
 
     # BLOX C) Block-specific CSS
     - source: blox
       target: assets/css/hbx/blocks
       files:
-        - '**/*.css'
+        - "**/*.css"
 
     # BLOX D) Shared assets (optional)
     - source: blox/shared/js
@@ -155,8 +155,8 @@ module:
     - source: blox
       target: assets/img/hbx/blocks
       files:
-        - '**/*.png'
-        - '**/*.jpg'
-        - '**/*.jpeg'
-        - '**/*.svg'
-        - '**/*.webp'
+        - "**/*.png"
+        - "**/*.jpg"
+        - "**/*.jpeg"
+        - "**/*.svg"
+        - "**/*.webp"

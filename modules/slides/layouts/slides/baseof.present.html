@@ -21,7 +21,7 @@
 */}}
 
 <!doctype html>
-{{- $language_code := site.LanguageCode | default "en-us" -}}
+{{- $language_code := site.Language.Locale | default "en-us" -}}
 <html lang="{{$language_code}}" {{ if in hugo.Data.i18n.rtl.rtl $language_code }}dir="rtl"{{else}}dir="ltr"{{end}}>
 <head>
 

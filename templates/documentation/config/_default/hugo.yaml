@@ -13,7 +13,7 @@ baseURL: 'https://example.com/' # Website URL
 
 cascade:
   # Docs folder options
-  - _target:
+  - target:
       path: /docs/**
     editable: true
     show_breadcrumb: true
@@ -22,7 +22,7 @@ cascade:
     # Show date modified at end of content
     show_date_updated: true
   # Blog post options
-  - _target:
+  - target:
       path: /blog/**
       kind: page
     pager: true

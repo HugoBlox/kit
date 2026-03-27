@@ -14,7 +14,7 @@ outputFormats:
     path: present
 
 cascade:
-  - _target:
+  - target:
       path: "/slides/**"
       kind: "page"
     outputs:

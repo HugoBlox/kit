@@ -13,7 +13,7 @@ baseURL: 'https://example.com/' # Website URL
 
 cascade:
   # Blog post options
-  - _target:
+  - target:
       path: /blog/**
       kind: page
     pager: true
@@ -30,7 +30,7 @@ cascade:
       navbar:
         enable: true
   # Blog section options
-  - _target:
+  - target:
       path: /blog/*
       kind: section
     # Set the listing view

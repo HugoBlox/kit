@@ -13,7 +13,7 @@ baseURL: 'https://example.com/' # Website URL
 
 cascade:
   # Blog post options
-  - _target:
+  - target:
       path: /blog/**
       kind: page
     pager: true

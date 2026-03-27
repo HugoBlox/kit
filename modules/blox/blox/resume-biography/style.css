@@ -1,0 +1,63 @@
+.resume-biography {
+  #profile {
+    text-align: center;
+    padding: 30px 10px;
+    position: relative;
+  }
+
+  .avatar {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .network-icon {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #profile .network-icon {
+    margin-top: 0.5rem;
+  }
+
+  .network-icon li {
+    margin-right: 10px;
+
+    @media (max-width: 640px) {
+      margin-right: 12px;
+    }
+  }
+
+  .network-icon li:last-of-type {
+    margin-right: 0;
+  }
+
+  .network-icon li:hover {
+    transform: scale(1.2);
+  }
+
+  .big-icon {
+    font-size: 2rem;
+  }
+
+  .ul-interests li {
+    font-size: 0.9rem;
+  }
+
+  .ul-edu li .description p.course {
+    font-size: 0.9rem;
+  }
+
+  .ul-edu li .description p.institution {
+    font-size: 0.75rem;
+  }
+
+  .network-icon .big-icon {
+    font-size: 1.5rem;
+  }
+}

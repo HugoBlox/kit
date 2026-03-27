@@ -34,8 +34,10 @@
 
 /* Hugo Blox module components */
 @import "components/all.css";
-@import "blox/all.css";
 @import "views/all.css";
+
+/* Block-specific CSS is auto-discovered from co-located style.css files */
+/* See css.html partial for the discovery mechanism */
 @import "chroma.css";
 
 /* Hugo Blox Search */

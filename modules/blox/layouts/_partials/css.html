@@ -3,8 +3,24 @@
   {{/* Build dynamic @source list and prepend it before main.css */}}
   {{ $dynamic_sources_str := partial "tailwind_sources.html" . }}
   {{ $dynamic_sources_res := resources.FromString "css/_dynamic_sources.css" $dynamic_sources_str }}
+
   {{ $main_css := . }}
-  {{ $entry := slice $dynamic_sources_res $main_css | resources.Concat "css/_entry.css" }}
+  {{ $entry_parts := slice $dynamic_sources_res $main_css }}
+
+  {{/* Auto-discover co-located block CSS: shared utilities first, then per-block styles */}}
+  {{ range resources.Match "css/hbx/blocks/shared/**/*.css" }}
+    {{ $entry_parts = $entry_parts | append . }}
+  {{ end }}
+  {{ range resources.Match "css/hbx/blocks/**/style.css" }}
+    {{ $entry_parts = $entry_parts | append . }}
+  {{ end }}
+
+  {{/* Community block CSS (mounted by templates into dist/community/blox/) */}}
+  {{ range resources.Match "dist/community/blox/**/*.css" }}
+    {{ $entry_parts = $entry_parts | append . }}
+  {{ end }}
+
+  {{ $entry := $entry_parts | resources.Concat "css/_entry.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
   {{ with $entry | css.TailwindCSS $opts }}
     {{ if hugo.IsDevelopment }}

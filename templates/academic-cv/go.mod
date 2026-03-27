@@ -3,7 +3,7 @@ module github.com/HugoBlox/kit/templates/academic-cv
 go 1.19
 
 require (
-	github.com/HugoBlox/kit/modules/integrations/netlify v0.0.0-20260102210655-66cba27dc652
-	github.com/HugoBlox/kit/modules/blox v0.0.0-20260219145709-764756ab501c
-	github.com/HugoBlox/kit/modules/slides v0.0.0-20260219151239-9965378d1853
+	github.com/HugoBlox/kit/modules/integrations/netlify v0.0.0-20260327032542-ef8ed449c7e8
+	github.com/HugoBlox/kit/modules/blox v0.0.0-20260327043553-76023f9461b1
+	github.com/HugoBlox/kit/modules/slides v0.0.0-20260327041717-ee683c8cd1d1
 )

@@ -116,7 +116,7 @@
 
   {{/* Get page image for sharing. */}}
   {{ $sharing_image := resources.GetMatch (path.Join "media" "sharing.*") }}
-  {{ $featured_image := (.Resources.ByType "image").GetMatch "*featured*" }}
+  {{ $featured_image := partial "functions/get_featured_image" . }}
 {{ $avatar_image := (.Resources.ByType "image").GetMatch "avatar*" }}
   {{ $has_logo := fileExists "assets/media/logo.png" | or (fileExists "assets/media/logo.svg") }}
   {{ $og_image := "" }}

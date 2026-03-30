@@ -123,7 +123,7 @@ sections:
             - name: Docker
               icon: devicon/docker
             - name: AWS
-              icon: devicon/amazonwebservices-wordmark
+              icon: devicon/amazonwebservices
             - name: GitHub Actions
               icon: brands/github
             - name: Vercel

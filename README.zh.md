@@ -184,7 +184,7 @@ hugoblox create site
 </p>
 
 > [!NOTE]
-> **需要文档？** 查看 [**docs.hugoblox.com**](https://docs.hugoblox.com/?utm_source=github&utm_medium=readme&utm_content=docs)，获取指南、配置参考和最佳实践。
+> **需要文档？** 查看 [**docs.ownable.dev**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs)，获取指南、配置参考和最佳实践。
 
 ---
 
@@ -216,7 +216,7 @@ HugoBlox 为全球的**研究人员、咨询顾问、创业者、技术布道者
 <sub>自 2016 年以来，已创建 150,000+ 站点。用户评分 4.9/5。</sub>
 
 > *"我们先试了 Lovable 和 v0。它们几分钟就生成了落地页 —— 但输出是 400 行看不懂的 React。Hugo Chat 生成的是 Markdown 文件，整个团队都能直接改。当天下午就上线了。托管费：0 元。"*
-> — **Priya Ramanathan**, 联合创始人 & CTO, Arcline Labs
+> — **Priya Ramanathan**, 联合创始人 & CTO
 
 > *"我把实验室的研究方向告诉 Hugo Chat，它生成了 30 篇论文页面，BibTeX 元数据全对，还有团队介绍和新闻版块。博士后们一小时内就在编辑自己的页面了 —— 因为就是 Markdown，不需要任何培训。"*
 > — **Dr. James Park**, 首席研究科学家, 应用 AI 实验室
@@ -238,14 +238,14 @@ HugoBlox 为全球的**研究人员、咨询顾问、创业者、技术布道者
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugoblox.com/templates/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>浏览模板</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://docs.hugoblox.com/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>阅读文档</b></a>
+  <a href="https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>阅读文档</b></a>
 </p>
 
 ---
 
 ## 社区与支持
 
-- **有问题？** 加入 [Discord](https://discord.gg/z8wNYzb) 或搜索[文档](https://docs.hugoblox.com/)
+- **有问题？** 加入 [Discord](https://discord.gg/z8wNYzb) 或搜索[文档](https://docs.ownable.dev/)
 - **发现 Bug？** 提交 [Issue](https://github.com/HugoBlox/kit/issues)
 - **想贡献代码？** 阅读[贡献指南](./CONTRIBUTING.md)
 - **觉得好用？** 给这个仓库 [点个 Star](https://github.com/HugoBlox/kit) —— 帮助更多人发现它

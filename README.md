@@ -184,7 +184,7 @@ Drag-and-drop blocks, live preview, and YAML validation without leaving your edi
 </p>
 
 > [!NOTE]
-> **Need docs?** See [**docs.hugoblox.com**](https://docs.hugoblox.com/?utm_source=github&utm_medium=readme&utm_content=docs) for guides, configuration reference, and best practices.
+> **Need docs?** See [**docs.ownable.dev**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs) for guides, configuration reference, and best practices.
 
 ---
 
@@ -216,7 +216,7 @@ HugoBlox powers sites for **researchers, consultants, founders, developer advoca
 <sub>150,000+ sites created since 2016. Rated 4.9/5 by users.</sub>
 
 > *"We tried Lovable and v0 first. They generated a landing page in minutes — but it was 400 lines of React we couldn't touch. Hugo Chat generated the same page as Markdown files our whole team could edit. We shipped that afternoon. Hosting: $0/month."*
-> — **Priya Ramanathan**, Co-founder & CTO, Arcline Labs
+> — **Priya Ramanathan**, Co-founder & CTO
 
 > *"I described our research areas to Hugo Chat and it generated 30 publication pages with correct BibTeX metadata, team profiles, and a news section. My postdocs were editing their own pages within an hour — it's just Markdown. No CMS training, no tickets to IT."*
 > — **Dr. James Park**, Principal Research Scientist, Applied AI Lab
@@ -238,14 +238,14 @@ HugoBlox powers sites for **researchers, consultants, founders, developer advoca
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugoblox.com/templates/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Browse Templates</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://docs.hugoblox.com/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Read the Docs</b></a>
+  <a href="https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Read the Docs</b></a>
 </p>
 
 ---
 
 ## Community & support
 
-- **Questions?** Join the [Discord](https://discord.gg/z8wNYzb) or search the [Docs](https://docs.hugoblox.com/)
+- **Questions?** Join the [Discord](https://discord.gg/z8wNYzb) or search the [Docs](https://docs.ownable.dev/)
 - **Bug?** Open an [Issue](https://github.com/HugoBlox/kit/issues)
 - **Want to contribute?** Read the [Contributing Guide](./CONTRIBUTING.md)
 - **Love it?** [Star this repo](https://github.com/HugoBlox/kit) — it helps others find it

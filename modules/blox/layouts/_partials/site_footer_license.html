@@ -7,7 +7,7 @@
 {{ $copyright_license := $page_copyright.license | default $site_copyright.license | default dict }}
 {{ $notice := $page_copyright.notice | default $site_copyright.notice }}
 
-{{ $license_type := $copyright_license.type | default "cc" }}
+{{ $license_type := $copyright_license.type | default "" }}
 
 {{ $license_label := "" }}
 {{ $license_url := "" }}

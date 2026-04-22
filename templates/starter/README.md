@@ -1,6 +1,6 @@
 # [HugoBlox Starter — Your Blank Canvas](https://github.com/HugoBlox/hugo-starter)
 
-[![Screenshot](https://github.com/HugoBlox/kit/raw/main/.github/media/hero.png)](https://hugoblox.com/templates/starter/start/?utm_source=github&utm_medium=readme&utm_content=preview)
+[![Screenshot](https://github.com/HugoBlox/kit/raw/main/.github/media/hero.png)](https://hugoblox.com/templates/starter?utm_source=github&utm_medium=readme&utm_content=preview)
 
 <h1 align="center">Describe It. Deploy It. Own It.</h1>
 
@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/starter/start?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
+  <a href="https://hugoblox.com/templates/starter?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_starter"><b>Build with AI</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/?open=starter&loading=true&utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
+  <a href="https://hugoblox.com/templates/starter?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
 </p>
 
 <div align="center">
@@ -118,7 +118,7 @@ Every content type supports tags, categories, search, RSS, related content, and 
 
 > [!TIP]
 > Deploy a live site in 60 seconds — no software to install:
-> [**Deploy Starter free**](https://hugoblox.com/templates/starter/start?utm_source=github&utm_medium=readme&utm_content=get_started)
+> [**Deploy Starter free**](https://hugoblox.com/templates/starter?utm_source=github&utm_medium=readme&utm_content=get_started)
 
 **Option B: Use the CLI**
 
@@ -201,7 +201,7 @@ An AI assistant that understands Hugo and HugoBlox. Describe what you want and i
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/starter/start?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Starter — free</b></a>
+  <a href="https://hugoblox.com/templates/starter?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Starter — free</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_starter"><b>Build with AI</b></a>
 </p>
@@ -222,7 +222,7 @@ An AI assistant that understands Hugo and HugoBlox. Describe what you want and i
 ---
 
 Copyright 2016-present [**Lore Labs**](https://lore.tech/?utm_source=github&utm_medium=readme).
-Released under the [MIT License](./LICENSE.md).
+Released under the MIT License.
 
 <p align="center">
   <sub>HugoBlox is a trademark of Lore Labs.</sub>

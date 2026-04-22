@@ -1,6 +1,6 @@
 # [The Academic CV That Gets You Hired](https://github.com/HugoBlox/hugo-theme-academic-cv)
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/academic-cv/start/?utm_source=github&utm_medium=readme&utm_content=preview)
+[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=preview)
 
 <h1 align="center">The Portfolio That Works While You Sleep</h1>
 
@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
+  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_academic-cv"><b>Customize with AI</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/?open=academic-cv&loading=true&utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
+  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
 </p>
 
 <div align="center">
@@ -54,7 +54,7 @@ Most academic CVs are static PDFs that get lost in the pile. This is an **always
 > — **Prof. Sarah Chen**, Computer Science, ETH Zürich
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme&utm_content=cta_mid">
+  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_mid">
     <img src="https://img.shields.io/badge/⚡️%20Deploy%20Your%20CV%20in%2060s-7c3aed?style=for-the-badge" alt="Deploy this template" width="400">
   </a>
 </p>
@@ -85,7 +85,7 @@ Most academic CVs are static PDFs that get lost in the pile. This is an **always
 
 > [!TIP]
 > Deploy a live site in 60 seconds — no software to install:
-> [**Deploy Academic CV free**](https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme&utm_content=get_started)
+> [**Deploy Academic CV free**](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=get_started)
 
 **Option B: Use the CLI**
 
@@ -148,9 +148,9 @@ Love the free version? **Academic CV Pro** and **Resume Pro** take it further:
 <p align="center">
   <a href="https://hugoblox.com/pricing?utm_source=github&utm_medium=readme&utm_content=premium_academic-cv"><b>Compare plans</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/academic-cv-pro/start?utm_source=github&utm_medium=readme&utm_content=premium_deploy_academic-cv"><b>Deploy Academic CV Pro</b></a>
+  <a href="https://hugoblox.com/templates/academic-cv-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_academic-cv"><b>Deploy Academic CV Pro</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/resume-pro/start?utm_source=github&utm_medium=readme&utm_content=premium_deploy_resume"><b>Deploy Resume Pro</b></a>
+  <a href="https://hugoblox.com/templates/resume-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_resume"><b>Deploy Resume Pro</b></a>
 </p>
 
 ---
@@ -213,7 +213,7 @@ Yes. No questions asked.
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Academic CV — free</b></a>
+  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Academic CV — free</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_academic-cv"><b>Customize with AI</b></a>
 </p>

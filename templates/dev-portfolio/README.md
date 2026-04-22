@@ -1,6 +1,6 @@
-# [Developer Portfolio](https://hugoblox.com/templates/dev-portfolio/start?utm_source=github&utm_medium=readme)
+# [Developer Portfolio](https://hugoblox.com/templates/dev-portfolio?utm_source=github&utm_medium=readme)
 
-[![Screenshot](.github/preview.png)](https://hugoblox.com/templates/dev-portfolio/start?utm_source=github&utm_medium=readme)
+[![Screenshot](.github/preview.png)](https://hugoblox.com/templates/dev-portfolio?utm_source=github&utm_medium=readme)
 
 <h1 align="center">The Dev Portfolio That Gets You Hired</h1>
 
@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/dev-portfolio/start?utm_source=github&utm_medium=readme"><b>🚀 Deploy in 60s (Free)</b></a>
+  <a href="https://hugoblox.com/templates/dev-portfolio?utm_source=github&utm_medium=readme"><b>🚀 Deploy in 60s (Free)</b></a>
   &nbsp;•&nbsp;
-  <a href="https://hugoblox.com/templates/?open=dev-portfolio&loading=true&utm_source=github&utm_medium=readme">Live Demo</a>
+  <a href="https://hugoblox.com/templates/dev-portfolio?utm_source=github&utm_medium=readme">Live Demo</a>
   &nbsp;•&nbsp;
   <a href="https://docs.hugoblox.com/guides/studio/">Ownable CMS (Visual Editor)</a>
 </p>
@@ -69,7 +69,7 @@ Most portfolios look the same — and most “quick” site builders produce slo
 
 Deploy this template in ~60 seconds:
 
-- [Deploy in browser →](https://hugoblox.com/templates/dev-portfolio/start?utm_source=github&utm_medium=readme)
+- [Deploy in browser →](https://hugoblox.com/templates/dev-portfolio?utm_source=github&utm_medium=readme)
 
 ### Option 2 — Ownable CMS (visual editor in VS Code)
 
@@ -108,7 +108,7 @@ hugoblox create site --template dev-portfolio
 
 If you want a version that feels meaningfully more premium (and helps fund open source + research):
 
-- [Premium template →](https://hugoblox.com/templates/dev-portfolio-pro/start?utm_source=github&utm_medium=readme)
+- [Premium template →](https://hugoblox.com/templates/dev-portfolio-pro?utm_source=github&utm_medium=readme)
 - [HugoBlox Pro / Studio →](https://hugoblox.com/pricing?utm_source=github&utm_medium=readme)
 
 ---

@@ -1,6 +1,6 @@
-# [Markdown Slides](https://hugoblox.com/templates/markdown-slides/start?utm_source=github&utm_medium=readme)
+# [Markdown Slides](https://hugoblox.com/templates/markdown-slides?utm_source=github&utm_medium=readme)
 
-[![Screenshot](.github/preview.png)](https://hugoblox.com/templates/markdown-slides/start?utm_source=github&utm_medium=readme)
+[![Screenshot](.github/preview.png)](https://hugoblox.com/templates/markdown-slides?utm_source=github&utm_medium=readme)
 
 <h1 align="center">The Presentation Framework for Researchers</h1>
 
@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/markdown-slides/start?utm_source=github&utm_medium=readme"><b>🚀 Deploy in 60s (Free)</b></a>
+  <a href="https://hugoblox.com/templates/markdown-slides?utm_source=github&utm_medium=readme"><b>🚀 Deploy in 60s (Free)</b></a>
   &nbsp;•&nbsp;
-  <a href="https://hugoblox.com/templates/?open=markdown-slides&loading=true&utm_source=github&utm_medium=readme">Live Demo</a>
+  <a href="https://hugoblox.com/templates/markdown-slides?utm_source=github&utm_medium=readme">Live Demo</a>
   &nbsp;•&nbsp;
   <a href="https://docs.hugoblox.com/guides/studio/">Ownable CMS (Visual Editor)</a>
 </p>
@@ -69,7 +69,7 @@ Traditional slide software (PowerPoint, Keynote) locks your content in binary fi
 
 Deploy this template in ~60 seconds:
 
-- [Deploy in browser →](https://hugoblox.com/templates/markdown-slides/start?utm_source=github&utm_medium=readme)
+- [Deploy in browser →](https://hugoblox.com/templates/markdown-slides?utm_source=github&utm_medium=readme)
 
 ### Option 2 — Ownable CMS (visual editor in VS Code)
 

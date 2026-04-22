@@ -18,7 +18,7 @@ sections:
         icon: play
       secondary_action:
         text: Create Your Own
-        url: https://hugoblox.com/templates/markdown-slides/start?utm_source=hugoblox&utm_medium=demo
+        url: https://hugoblox.com/templates/markdown-slides?utm_source=hugoblox&utm_medium=demo
     design:
       spacing:
         padding: ['5rem', '0', '4rem', '0']

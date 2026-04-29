@@ -15,3 +15,5 @@ renames:
     new: help-categories
   - old: trending-questions
     new: help-questions
+  - old: collection
+    new: content-collection

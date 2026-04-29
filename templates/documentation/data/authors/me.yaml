@@ -10,7 +10,8 @@ name:
 status:
   icon: "☕️"
 role: Professor of Artificial Intelligence
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include distributed robotics, mobile computing and
+  programmable matter.
 affiliations:
   - name: Stanford University
     url: https://www.stanford.edu/
@@ -19,7 +20,7 @@ links:
     url: mailto:your-email@example.com
     label: E-mail Me
   - icon: brands/x
-    url: https://x.com/MakeOwnable
+    url: https://x.com/GoOwnable
   - icon: brands/instagram
     url: https://www.instagram.com/
   - icon: brands/linkedin

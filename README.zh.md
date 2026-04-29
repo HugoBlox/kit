@@ -35,8 +35,8 @@
   <a href="https://open-vsx.org/extension/Ownable/ownable">
     <img src="https://img.shields.io/open-vsx/stars/ownable/ownable?label=VS%20Code%20%E8%AF%84%E5%88%86&logo=visualstudiocode&logoColor=white&style=flat-square&color=007ACC" alt="VS Code 评分">
   </a>
-  <a href="https://x.com/MakeOwnable">
-    <img src="https://img.shields.io/twitter/follow/MakeOwnable?label=%E5%85%B3%E6%B3%A8&logo=x&logoColor=white&style=flat-square&color=000000" alt="关注 X">
+  <a href="https://x.com/GoOwnable">
+    <img src="https://img.shields.io/twitter/follow/GoOwnable?label=%E5%85%B3%E6%B3%A8&logo=x&logoColor=white&style=flat-square&color=000000" alt="关注 X">
   </a>
 
 </div>

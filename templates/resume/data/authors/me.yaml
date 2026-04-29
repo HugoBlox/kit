@@ -12,7 +12,8 @@ status:
 role: Director of Cloud Infrastructure
 bio: >
   I am currently Director of Cloud Infrastructure at GenCoin where I am leading
-  teams on edge computing, deep sea data center architecture, and hivemind optimization.
+  teams on edge computing, deep sea data center architecture, and hivemind
+  optimization.
 affiliations:
   - name: GenCoin
     url: https://www.example.com/
@@ -21,7 +22,7 @@ links:
     url: mailto:your-email@example.com
     label: E-mail Me
   - icon: brands/x
-    url: https://x.com/MakeOwnable
+    url: https://x.com/GoOwnable
   - icon: brands/github
     url: https://github.com/gcushen
   - icon: brands/linkedin
@@ -36,8 +37,8 @@ education:
     summary: |
       Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
     button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
+      text: "Read Thesis"
+      url: "https://example.com"
   - degree: MEng Artificial Intelligence
     institution: Massachusetts Institute of Technology
     start: 2016-01-01
@@ -88,8 +89,8 @@ skills:
       - label: PyTorch
         level: 2
   - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+    color: "#eeac02"
+    color_border: "#f0bf23"
     items:
       - label: Hiking
         level: 3
@@ -107,14 +108,14 @@ languages:
 awards:
   - title: Neural Networks and Deep Learning
     url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
+    date: "2023-11-25"
     awarder: Coursera
     icon: brands/coursera
     summary: |
       I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
   - title: Blockchain Fundamentals
     url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
+    date: "2023-07-01"
     awarder: edX
     icon: brands/edx
     summary: |
@@ -122,10 +123,10 @@ awards:
       - Synthesize your own blockchain solutions
       - Gain an in-depth understanding of the specific mechanics of Bitcoin
       - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
+  - title: "Object-Oriented Programming in R"
     url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
     certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
+    date: "2023-01-21"
     awarder: datacamp
     icon: brands/datacamp
     summary: |

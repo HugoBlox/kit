@@ -362,7 +362,7 @@ Each lecture gets its own slide deck, all version controlled, all editable by st
 - 📚 [Documentation](https://docs.hugoblox.com/guides/slides/)
 - 💬 [Discord Community](https://discord.gg/z8wNYzb)
 - 🐛 [GitHub Issues](https://github.com/HugoBlox/kit/issues)
-- 🐦 [Follow @MakeOwnable](https://twitter.com/MakeOwnable)
+- 🐦 [Follow @GoOwnable](https://twitter.com/GoOwnable)
 
 ---
 

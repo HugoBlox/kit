@@ -35,7 +35,7 @@ Welcome 👋
 - 👉 [**Create a new site**](https://hugoblox.com/templates/)
 - 📚 [**Personalize your site**](https://docs.hugoblox.com/)
 - 💬 [Chat with the **Hugo Blox community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- 🐦 Twitter: [@MakeOwnable](https://x.com/MakeOwnable)  #MadeWithHugoBlox
+- 🐦 Twitter: [@GoOwnable](https://x.com/GoOwnable)  #MadeWithHugoBlox
 - 💡 [Request a **feature** or report a **bug** for _Hugo Blox_](https://github.com/HugoBlox/kit/issues)
 - ⬆️ **Updating Hugo Blox?** View the [Update Guide](https://docs.hugoblox.com/reference/update/) and [Release Notes](https://github.com/HugoBlox/kit/releases)
 
@@ -81,6 +81,6 @@ Hugo Blox and its templates come with **automatic day (light) and night (dark) m
 
 ## License
 
-Copyright 2016-present [George Cushen](https://georgecushen.com).
+
 
 Released under the [MIT](https://github.com/HugoBlox/kit/blob/main/LICENSE.md) license.

@@ -213,7 +213,7 @@ An AI assistant that understands Hugo and HugoBlox. Describe what you want and i
 - 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
 - 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_starter)
 - ⭐ [**Star HugoBlox**](https://github.com/HugoBlox/kit) — help others find it
-- 🐦 [**Follow on X**](https://x.com/MakeOwnable)
+- 🐦 [**Follow on X**](https://x.com/GoOwnable)
 
 ### Sponsors
 

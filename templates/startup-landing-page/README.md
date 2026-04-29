@@ -199,7 +199,7 @@ An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it
 - 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
 - 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_startup-landing-page)
 - ⭐ [**Star HugoBlox**](https://github.com/HugoBlox/kit) — help others find it
-- 🐦 [**Follow on X**](https://x.com/MakeOwnable)
+- 🐦 [**Follow on X**](https://x.com/GoOwnable)
 
 ### Sponsors
 

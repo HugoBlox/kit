@@ -17,14 +17,15 @@ hugoblox:
     # Legal entity for copyright notices (defaults to name if not set)
     organization: ""
     # Schema.org type for structured data
-    type: person                        # person | organization | local_business
+    type: person # person | organization | local_business
     # Short tagline displayed on your site
     tagline: ""
     # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox Kit. Easily create your personal academic website."
+    description: "The highly-customizable Hugo Academic theme powered by HugoBlox
+      Kit. Easily create your personal academic website."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "MakeOwnable"              # Twitter/X handle for Twitter Cards (without @)
+      twitter: "GoOwnable" # Twitter/X handle for Twitter Cards (without @)
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -37,9 +38,9 @@ hugoblox:
     pack: "default"
     # Optional: Override theme pack colors
     colors:
-      primary: ""                       # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
+      primary: "" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
       secondary: ""
-      neutral: ""                       # Affects gray utilities (text-gray-*, bg-gray-*)
+      neutral: "" # Affects gray utilities (text-gray-*, bg-gray-*)
     # Optional: Mode-specific color overrides
     colors_light: {}
     colors_dark: {}
@@ -72,7 +73,7 @@ hugoblox:
     # Spacing density: 'compact', 'comfortable', or 'spacious'
     spacing: "comfortable"
     # Avatar shape in author profiles
-    avatar_shape: circle                # circle | square | rounded
+    avatar_shape: circle # circle | square | rounded
 
   # ────────────────────────────────────────────────────────────────────────────
   # HEADER
@@ -81,11 +82,11 @@ hugoblox:
   header:
     enable: true
     # Header style variant
-    style: navbar                       # navbar | navbar-simple | minimal
+    style: navbar # navbar | navbar-simple | minimal
     # Stick to top on scroll
     sticky: true
     # Menu alignment
-    align: center                       # left | center | right
+    align: center # left | center | right
     # Feature toggles
     search: true
     theme_toggle: true
@@ -103,7 +104,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   footer:
     # Footer style variant
-    style: minimal                      # minimal | columns | centered
+    style: minimal # minimal | columns | centered
     language_switcher: true
     # Custom footer text (HTML supported)
     text: ""
@@ -116,7 +117,7 @@ hugoblox:
     # Copyright notice - supports {year}, {name}, {license} placeholders
     notice: "© {year} {name}. This work is licensed under {license}"
     license:
-      type: cc                          # cc | custom
+      type: cc # cc | custom
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -164,7 +165,7 @@ hugoblox:
       enable: true
     # Academic citations
     citations:
-      style: apa                        # apa | mla | chicago | ieee
+      style: apa # apa | mla | chicago | ieee
 
   # ────────────────────────────────────────────────────────────────────────────
   # SEARCH
@@ -183,7 +184,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   comments:
     enable: false
-    provider: ""                        # giscus | disqus
+    provider: "" # giscus | disqus
     giscus:
       repo: ""
       repo_id: ""
@@ -198,9 +199,9 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   analytics:
     google:
-      measurement_id: ""                # Google Analytics 4: G-XXXXXXXXXX
+      measurement_id: "" # Google Analytics 4: G-XXXXXXXXXX
     google_tag_manager:
-      container_id: ""                  # GTM-XXXXXXX
+      container_id: "" # GTM-XXXXXXX
     plausible:
       domain: ""
     fathom:
@@ -230,7 +231,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   repository:
     enable: false
-    url: ""                             # e.g., https://github.com/username/repo
+    url: "" # e.g., https://github.com/username/repo
     branch: main
     content_dir: content
 
@@ -239,7 +240,7 @@ hugoblox:
   # Regional formatting preferences
   # ────────────────────────────────────────────────────────────────────────────
   locale:
-    date_format: "Jan 2, 2006"          # Go time format
+    date_format: "Jan 2, 2006" # Go time format
     time_format: "3:04 PM"
     address_format: en-us
 
@@ -251,7 +252,7 @@ hugoblox:
     csp:
       policy: ""
       report_only: false
-    frame_options: allow                 # deny | sameorigin | allow - allow enables iframe embedding
+    frame_options: allow # deny | sameorigin | allow - allow enables iframe embedding
     permissions_policy: ""
 
   # ────────────────────────────────────────────────────────────────────────────
@@ -269,7 +270,7 @@ hugoblox:
   debug:
     enable: false
     hud:
-      position: bottom-left             # top-left | top-right | bottom-left | bottom-right
+      position: bottom-left # top-left | top-right | bottom-left | bottom-right
       opacity: 1.0
     export_logs: true
 
@@ -283,7 +284,7 @@ hugoblox:
     # Note: Even with Premium, you can keep this false to support open source!
     # Get Premium: https://hugoblox.com/premium
     hide_attribution: false
-    
+
     # Affiliate referral code for rewards program
     # Join affiliate program: https://hugoblox.com/affiliates
     affiliate_code: ""

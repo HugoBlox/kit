@@ -77,14 +77,21 @@
           (index $ctaWhenTemplate (mod $n (len $ctaWhenTemplate)))
           (index $ctaNoTemplate   (mod $n (len $ctaNoTemplate))) -}}
   
-    {{- $target := cond (ne $tid "")
-          (printf "%s/templates/%s/start" $base $tid)
-          (printf "%s/start" $base) -}}
-  
+    {{/* Brand link: template-deploy URL when known, else hugoblox.com homepage.
+         CTA link: agentic Hugo Chat builder, with template_id seed when known. */}}
+    {{- $brandTarget := cond (ne $tid "") (printf "%s/templates/%s" $base $tid) $base -}}
+    {{- $ctaTarget := "https://hugo.chat" -}}
+
     {{- $brandHref := printf "%s?utm_source=site_footer&utm_medium=referral&utm_campaign=poweredby_oss&utm_content=brand_%s"
-          $base (cond (ne $tid "") (printf "%s" $tid) "na") -}}
+          $brandTarget (cond (ne $tid "") (printf "%s" $tid) "na") -}}
+    {{- if ne $tid "" -}}
+      {{- $brandHref = printf "%s&start=1" $brandHref -}}
+    {{- end -}}
     {{- $ctaHref := printf "%s?utm_source=site_footer&utm_medium=referral&utm_campaign=poweredby_oss&utm_content=cta_%s"
-          $target (cond (ne $tid "") (printf "%s" $tid) "na") -}}
+          $ctaTarget (cond (ne $tid "") (printf "%s" $tid) "na") -}}
+    {{- if ne $tid "" -}}
+      {{- $ctaHref = printf "%s&template_id=%s" $ctaHref $tid -}}
+    {{- end -}}
     {{- if ne $ref "" -}}
       {{- $brandHref = printf "%s&ref=%s" $brandHref $ref -}}
       {{- $ctaHref   = printf "%s&ref=%s"   $ctaHref   $ref -}}

@@ -1,6 +1,6 @@
-# [The Landing Page That Ships Before Your Competitor's](https://github.com/HugoBlox/hugo-theme-startup-landing-page)
+# [The Landing Page That Ships Before Your Competitor's](https://github.com/HugoBlox/hugo-theme-saas-landing-page)
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=preview)
+[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=preview)
 
 <!-- TODO: Replace with a short demo video showing Hugo Chat generating a landing page -->
 <!-- https://github.com/user-attachments/assets/REPLACE_ME -->
@@ -14,17 +14,17 @@
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
+  <a href="https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_startup-landing-page"><b>Customize with AI</b></a>
+  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_saas-landing-page"><b>Customize with AI</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
+  <a href="https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
 </p>
 
 <div align="center">
 
-  <a href="https://github.com/HugoBlox/hugo-theme-startup-landing-page">
-    <img src="https://img.shields.io/github/stars/HugoBlox/hugo-theme-startup-landing-page?label=Star&logo=github&style=flat-square&color=181717" alt="GitHub Stars">
+  <a href="https://github.com/HugoBlox/hugo-theme-saas-landing-page">
+    <img src="https://img.shields.io/github/stars/HugoBlox/hugo-theme-saas-landing-page?label=Star&logo=github&style=flat-square&color=181717" alt="GitHub Stars">
   </a>
   <a href="https://discord.gg/z8wNYzb">
     <img src="https://img.shields.io/discord/722225264733716590?label=Discord&logo=discord&logoColor=white&style=flat-square&color=5865F2" alt="Discord">
@@ -57,7 +57,7 @@ Most landing page builders either generate unmaintainable React code or lock you
 > — **Daniel Kim**, Growth Engineer
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_mid">
+  <a href="https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_mid">
     <img src="https://img.shields.io/badge/⚡️%20Deploy%20Your%20Landing%20Page%20in%2060s-7c3aed?style=for-the-badge" alt="Deploy this template" width="400">
   </a>
 </p>
@@ -75,7 +75,7 @@ Most landing page builders either generate unmaintainable React code or lock you
 | **CTA sections** | Multiple call-to-action blocks placed throughout the page for maximum conversion. |
 | **Block-based composition** | Reorder, add, or remove sections without rewriting templates. Build like Lego. |
 | **SEO & AI-ready** | Optimized for search engines and LLMs — your site gets found and recommended. |
-| **AI page generation** | Describe what you need to [Hugo Chat](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=features_startup-landing-page) — get structured pages with correct front matter instantly. |
+| **AI page generation** | Describe what you need to [Hugo Chat](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=features_saas-landing-page) — get structured pages with correct front matter instantly. |
 | **Visual editor** | Drag-and-drop blocks in VS Code with [Ownable CMS](https://marketplace.visualstudio.com/items?itemName=ownable.ownable). No coding needed. |
 | **Plain Markdown** | Every file is human-readable. No database, no lock-in, take your content anywhere. |
 | **Free hosting** | Deploy to GitHub Pages, Netlify, Vercel, or Cloudflare — all free tier. |
@@ -90,13 +90,13 @@ Most landing page builders either generate unmaintainable React code or lock you
 
 > [!TIP]
 > Deploy a live site in 60 seconds — no software to install:
-> [**Deploy Landing Page free**](https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=get_started)
+> [**Deploy Landing Page free**](https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=get_started)
 
 **Option B: Use the CLI**
 
 ```bash
 # Requires Hugo Extended & Node.js
-npx hugoblox create site --template startup-landing-page
+npx hugoblox create site --template saas-landing-page
 ```
 
 ### Step 2: Customize With AI + Visual Editing
@@ -111,7 +111,7 @@ Tell Hugo Chat what you want in plain English. It generates structured pages wit
 
 > *"Generate a landing page for my SaaS with hero, pricing, and testimonials"*
 
-[**Try Hugo Chat — free**](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=step2_startup-landing-page)
+[**Try Hugo Chat — free**](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=step2_saas-landing-page)
 
 </td>
 <td width="50%">
@@ -130,7 +130,7 @@ Tell Hugo Chat what you want in plain English. It generates structured pages wit
 *Ownable CMS: Drag-and-drop page builder inside VS Code.*
 
 > [!NOTE]
-> **New to Hugo?** No problem. You don't need to know Hugo — edit visually or write Markdown. Hugo is the engine under the hood that makes your site fast, secure, and free to host. [Learn more →](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs_startup-landing-page)
+> **New to Hugo?** No problem. You don't need to know Hugo — edit visually or write Markdown. Hugo is the engine under the hood that makes your site fast, secure, and free to host. [Learn more →](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs_saas-landing-page)
 
 ---
 
@@ -175,7 +175,7 @@ Yes. Your site is just Markdown files in a folder. Copy them anywhere.
 
 <details>
 <summary><b>What's Hugo Chat?</b></summary>
-An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it generates the right pages with correct front matter. <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=faq_startup-landing-page">Free to try.</a>
+An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it generates the right pages with correct front matter. <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=faq_saas-landing-page">Free to try.</a>
 </details>
 
 ---
@@ -187,9 +187,9 @@ An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it
 </p>
 
 <p align="center">
-  <a href="https://hugoblox.com/templates/startup-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Landing Page — free</b></a>
+  <a href="https://hugoblox.com/templates/saas-landing-page?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Landing Page — free</b></a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_startup-landing-page"><b>Customize with AI</b></a>
+  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_saas-landing-page"><b>Customize with AI</b></a>
 </p>
 
 ---
@@ -197,7 +197,7 @@ An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it
 ## Community & Support
 
 - 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
-- 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_startup-landing-page)
+- 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_saas-landing-page)
 - ⭐ [**Star HugoBlox**](https://github.com/HugoBlox/kit) — help others find it
 - 🐦 [**Follow on X**](https://x.com/GoOwnable)
 

@@ -60,7 +60,7 @@ jobs:
                     ["templates/data-science-blog"]="hugo-theme-data-science-blog"
                     ["templates/documentation"]="hugo-theme-documentation"
                     ["templates/link-in-bio"]="hugo-theme-link-in-bio"
-                    ["templates/startup-landing-page"]="hugo-theme-startup-landing-page"
+                    ["templates/saas-landing-page"]="hugo-theme-saas-landing-page"
                     ["templates/dev-portfolio"]="hugo-theme-developer-portfolio"
                     ["templates/markdown-slides"]="hugo-theme-markdown-slides"
                     ["templates/starter"]="hugo-starter"

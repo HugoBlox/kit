@@ -4,5 +4,5 @@ deploy:
   # Deployment target: github-pages, netlify, vercel, cloudflare, or none
   host: 'github-pages'
 template:
-  id: "landing-page"
-  name: "Landing Page"
+  id: "saas-landing-page"
+  name: "SaaS Landing Page"

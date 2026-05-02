@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/devcontainers/go:1.22-bookworm
 
 ARG NODE_VERSION=22
 ARG PNPM_VERSION=10.14.0
-ARG HUGO_VERSION=0.161.0
+ARG HUGO_VERSION=0.161.1
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PNPM_HOME=/home/vscode/.local/share/pnpm

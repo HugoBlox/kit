@@ -14,8 +14,10 @@ on:
 
 env:
   IMAGE_NAME: ghcr.io/hugoblox/hugo-blox-dev
-  # Hugo >= 0.161.0 requires Node >= 22 for css.TailwindCSS Node permissions.
-  DEFAULT_HUGO_VERSION: 0.161.0
+  # Hugo >= 0.161.1 required: 0.161.0 introduced the Node permission
+  # sandbox without an allowChildProcess field, blocking spawns under
+  # tailwindcss (e.g. @parcel/watcher → detect-libc → getconf on Linux).
+  DEFAULT_HUGO_VERSION: 0.161.1
   NODE_VERSION: 22
   PNPM_VERSION: 10.14.0
 

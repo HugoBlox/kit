@@ -65,7 +65,7 @@ jobs:
         VERSION=$(yq '.build.hugo_version // ""' hugoblox.yaml 2>/dev/null | grep -v '^null$' || true)
         
         # Fallback to a known stable version if not specified
-        DEFAULT_VERSION="0.161.0"
+        DEFAULT_VERSION="0.161.1"
         VERSION=${VERSION:-$DEFAULT_VERSION}
         
         # Validate version format (basic check)

@@ -72,15 +72,13 @@ security:
       - ^HUGO_
       # Allow continuous integration vars
       - ^CI$
-  node:
-    permissions:
-      # Hugo's default allowChildProcess regex permits tailwindcss/npx but not
-      # `getconf`. @tailwindcss/cli pulls in @parcel/watcher, whose bundled
-      # detect-libc@1 synchronously spawns `getconf GNU_LIBC_VERSION` at
-      # require time on Linux to pick glibc vs musl prebuilds. Without this
-      # entry, Ubuntu CI fails with ERR_ACCESS_DENIED while macOS works
-      # (detect-libc short-circuits on Darwin).
-      allowChildProcess: ^(tailwindcss|npx|getconf)$
+  # Note: security.node.permissions is intentionally NOT set here. Hugo
+  # >= 0.161.1's built-in defaults permit `tailwindcss` for allowAddons,
+  # allowChildProcess, and allowWorker — sufficient for @tailwindcss/cli's
+  # transitive spawns (e.g. @parcel/watcher → detect-libc → getconf on
+  # Linux). The hugoVersion.min below pins to 0.161.1 because 0.161.0
+  # introduced the Node permission sandbox without an allowChildProcess
+  # field, so all spawns under tailwindcss were blocked on Linux.
 outputFormats:
   backlinks:
     mediaType: application/json
@@ -115,7 +113,11 @@ module:
     # 0.161.0 introduced css.TailwindCSS Node.js permission sandbox
     # (Node >= 22 required) and dropped support for the standalone
     # tailwindcss binary. The npm @tailwindcss/cli package is required.
-    min: "0.161.0"
+    # 0.161.1 added security.node.permissions.allowChildProcess (default
+    # ['tailwindcss']); 0.161.0 has no way to permit any child process,
+    # so spawns under tailwindcss (e.g. @parcel/watcher's detect-libc →
+    # getconf on Linux) are blocked with ERR_ACCESS_DENIED.
+    min: "0.161.1"
     extended: true
   imports:
     - path: github.com/HugoBlox/kit/modules/analytics

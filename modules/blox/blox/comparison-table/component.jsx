@@ -9,7 +9,11 @@ function renderText(text) {
   return String(text)
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>")
-    .replace(/`(.*?)`/g, (_, code) => `<code class="px-1.5 py-0.5 rounded font-mono text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">${code}</code>`);
+    .replace(
+      /`(.*?)`/g,
+      (_, code) =>
+        `<code class="px-1.5 py-0.5 rounded font-mono text-sm bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">${code}</code>`,
+    );
 }
 
 // Resolve a cell value into one of: {kind: "check"} | {kind: "cross"} | {kind: "partial", note} | {kind: "text", value, emphasis}
@@ -17,31 +21,26 @@ function resolveCell(raw) {
   if (raw === true) return {kind: "check"};
   if (raw === false || raw == null || raw === "") return {kind: "cross"};
   if (typeof raw === "object") {
-    if (raw.value === true)  return {kind: "check", note: raw.note};
+    if (raw.value === true) return {kind: "check", note: raw.note};
     if (raw.value === false) return {kind: "cross", note: raw.note};
     if (raw.value === "partial" || raw.partial) return {kind: "partial", note: raw.note ?? raw.value};
     return {kind: "text", value: raw.value ?? "", emphasis: raw.emphasis ?? false, note: raw.note};
   }
   const s = String(raw).trim();
-  if (s === "true"  || s === "yes" || s === "✓") return {kind: "check"};
-  if (s === "false" || s === "no"  || s === "✗" || s === "—") return {kind: "cross"};
+  if (s === "true" || s === "yes" || s === "✓") return {kind: "check"};
+  if (s === "false" || s === "no" || s === "✗" || s === "—") return {kind: "cross"};
   if (s === "partial" || s === "limited") return {kind: "partial", note: s};
   return {kind: "text", value: s};
 }
 
 function CellContent({cell, isHighlighted}) {
-  const positiveColor = isHighlighted
-    ? "text-primary-600 dark:text-primary-400"
-    : "text-green-500 dark:text-green-400";
-  const partialColor  = "text-amber-500 dark:text-amber-400";
+  const positiveColor = isHighlighted ? "text-primary-600 dark:text-primary-400" : "text-green-500 dark:text-green-400";
+  const partialColor = "text-amber-500 dark:text-amber-400";
 
   if (cell.kind === "check") {
     return (
       <div class="flex items-center justify-center gap-1.5">
-        <span
-          class={`h-5 w-5 ${positiveColor}`}
-          dangerouslySetInnerHTML={{__html: CHECK_SVG}}
-        />
+        <span class={`h-5 w-5 ${positiveColor}`} dangerouslySetInnerHTML={{__html: CHECK_SVG}} />
         {cell.note && <span class="text-xs text-gray-500 dark:text-gray-400">{cell.note}</span>}
       </div>
     );
@@ -49,10 +48,7 @@ function CellContent({cell, isHighlighted}) {
   if (cell.kind === "cross") {
     return (
       <div class="flex items-center justify-center gap-1.5">
-        <span
-          class="h-5 w-5 text-gray-400 dark:text-gray-500"
-          dangerouslySetInnerHTML={{__html: X_SVG}}
-        />
+        <span class="h-5 w-5 text-gray-400 dark:text-gray-500" dangerouslySetInnerHTML={{__html: X_SVG}} />
         {cell.note && <span class="text-xs text-gray-500 dark:text-gray-400">{cell.note}</span>}
       </div>
     );
@@ -60,10 +56,7 @@ function CellContent({cell, isHighlighted}) {
   if (cell.kind === "partial") {
     return (
       <div class="flex items-center justify-center gap-1.5">
-        <span
-          class={`h-5 w-5 ${partialColor}`}
-          dangerouslySetInnerHTML={{__html: MINUS_SVG}}
-        />
+        <span class={`h-5 w-5 ${partialColor}`} dangerouslySetInnerHTML={{__html: MINUS_SVG}} />
         {cell.note && <span class="text-xs text-gray-500 dark:text-gray-400">{cell.note}</span>}
       </div>
     );
@@ -87,14 +80,13 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
   // Column widths: feature label column gets 1.5× a competitor column for readable row labels
   const colWidthPct = 100 / (competitors.length + 1.5);
   const labelColPct = colWidthPct * 1.5;
-  const colLeftPct  = labelColPct + colWidthPct * (highlightIdx >= 0 ? highlightIdx : 0);
+  const colLeftPct = labelColPct + colWidthPct * (highlightIdx >= 0 ? highlightIdx : 0);
 
   return (
     // pt-5 reserves vertical space above the table for the ring-tab badge to sit on the column's top edge
     <div class="hidden md:block relative pt-5">
       {/* Card — overflow-visible so the highlight ring can extend above its top edge */}
       <div class="relative rounded-2xl ring-1 ring-gray-200 dark:ring-gray-700 bg-white dark:bg-gray-800 overflow-visible shadow-sm">
-
         {/* Highlight column FILL — paints BEFORE table, behind cells. Cell content sits on top. */}
         {highlightIdx >= 0 && (
           <div
@@ -105,10 +97,7 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
 
         {/* Recommended badge — sits on the highlight ring's top edge as a tab */}
         {highlighted?.badge && (
-          <div
-            class="absolute z-10"
-            style={`top: -1.25rem; left: calc(${colLeftPct + colWidthPct / 2}%); transform: translate(-50%, -50%);`}
-          >
+          <div class="absolute z-10" style={`top: -1.25rem; left: calc(${colLeftPct + colWidthPct / 2}%); transform: translate(-50%, -50%);`}>
             <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary-600 text-white shadow-md whitespace-nowrap">
               {highlighted.badge}
             </span>
@@ -126,11 +115,7 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
                     <div class={`text-base font-bold ${isYou ? "text-primary-600 dark:text-primary-400" : "text-gray-900 dark:text-white"}`}>
                       {c.name}
                     </div>
-                    {c.tagline && (
-                      <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 font-normal">
-                        {c.tagline}
-                      </div>
-                    )}
+                    {c.tagline && <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 font-normal">{c.tagline}</div>}
                     {/* Competitor badges render inline (highlighted column uses the ring-tab instead) */}
                     {c.badge && !isYou && (
                       <div class="mt-2">
@@ -153,7 +138,10 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
                 if (isCategory) {
                   return (
                     <tr key={ri}>
-                      <td colSpan={competitors.length + 1} class="px-6 pt-8 pb-3 text-base font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-700">
+                      <td
+                        colSpan={competitors.length + 1}
+                        class="px-6 pt-8 pb-3 text-base font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-700"
+                      >
                         {row.feature}
                       </td>
                     </tr>
@@ -175,9 +163,7 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
                   <tr key={ri} class="border-t border-gray-100 dark:border-gray-700/50">
                     <td class={`px-6 py-4 ${cellBg(-1)}`}>
                       <div class="text-sm font-medium text-gray-900 dark:text-white">{row.feature}</div>
-                      {row.note && (
-                        <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{row.note}</div>
-                      )}
+                      {row.note && <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{row.note}</div>}
                     </td>
                     {competitors.map((_, ci) => (
                       <td key={ci} class={`px-6 py-4 ${cellBg(ci)}`}>
@@ -225,9 +211,7 @@ function DesktopTable({competitors, rows, cta, icon_svgs, rowStriping = false}) 
 
 function MobileCards({competitors, rows, cta, icon_svgs}) {
   const highlightIdx = competitors.findIndex((c) => c.highlight);
-  const ordered = highlightIdx >= 0
-    ? [competitors[highlightIdx], ...competitors.filter((_, i) => i !== highlightIdx)]
-    : competitors;
+  const ordered = highlightIdx >= 0 ? [competitors[highlightIdx], ...competitors.filter((_, i) => i !== highlightIdx)] : competitors;
 
   const ctaIconSvg = cta?.icon ? (icon_svgs?.[cta.icon] ?? null) : null;
   const isExtCta = cta?.url && (cta.url.startsWith("http://") || cta.url.startsWith("https://"));
@@ -244,33 +228,31 @@ function MobileCards({competitors, rows, cta, icon_svgs}) {
           >
             <div class="flex items-baseline justify-between mb-4">
               <div>
-                <div class={`text-lg font-bold ${isYou ? "text-primary-600 dark:text-primary-400" : "text-gray-900 dark:text-white"}`}>
-                  {c.name}
-                </div>
-                {c.tagline && (
-                  <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{c.tagline}</div>
-                )}
+                <div class={`text-lg font-bold ${isYou ? "text-primary-600 dark:text-primary-400" : "text-gray-900 dark:text-white"}`}>{c.name}</div>
+                {c.tagline && <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{c.tagline}</div>}
               </div>
               {c.badge && (
-                <span class={`px-2.5 py-0.5 text-xs font-semibold rounded-full ${isYou ? "bg-primary-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"}`}>
+                <span
+                  class={`px-2.5 py-0.5 text-xs font-semibold rounded-full ${isYou ? "bg-primary-600 text-white" : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300"}`}
+                >
                   {c.badge}
                 </span>
               )}
             </div>
             <ul class="space-y-3">
-              {rows.filter((r) => !r.category).map((row, ri) => (
-                <li key={ri} class="flex items-start justify-between gap-4">
-                  <div class="flex-1 min-w-0">
-                    <div class="text-sm font-medium text-gray-900 dark:text-white">{row.feature}</div>
-                    {row.note && (
-                      <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{row.note}</div>
-                    )}
-                  </div>
-                  <div class="flex-shrink-0">
-                    <CellContent cell={resolveCell((row.values ?? [])[ci])} isHighlighted={isYou} />
-                  </div>
-                </li>
-              ))}
+              {rows
+                .filter((r) => !r.category)
+                .map((row, ri) => (
+                  <li key={ri} class="flex items-start justify-between gap-4">
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-medium text-gray-900 dark:text-white">{row.feature}</div>
+                      {row.note && <div class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{row.note}</div>}
+                    </div>
+                    <div class="flex-shrink-0">
+                      <CellContent cell={resolveCell((row.values ?? [])[ci])} isHighlighted={isYou} />
+                    </div>
+                  </li>
+                ))}
             </ul>
 
             {isYou && cta?.text && cta?.url && (
@@ -299,30 +281,21 @@ export const ComparisonTableBlock = ({content = {}, design = {}, icon_svgs = {}}
       <div class="max-w-6xl mx-auto">
         {(title || subtitle || text) && (
           <div class="text-center max-w-3xl mx-auto mb-10 lg:mb-14">
-            {subtitle && (
-              <p class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-3">
-                {subtitle}
-              </p>
-            )}
+            {subtitle && <p class="text-xs font-semibold uppercase tracking-widest text-primary-600 dark:text-primary-400 mb-3">{subtitle}</p>}
             {title && (
               <h2
                 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4"
                 dangerouslySetInnerHTML={{__html: renderText(title)}}
               />
             )}
-            {text && (
-              <p
-                class="text-lg text-gray-600 dark:text-gray-400"
-                dangerouslySetInnerHTML={{__html: renderText(text)}}
-              />
-            )}
+            {text && <p class="text-lg text-gray-600 dark:text-gray-400" dangerouslySetInnerHTML={{__html: renderText(text)}} />}
           </div>
         )}
 
         {competitors.length > 0 && rows.length > 0 && (
           <>
             <DesktopTable competitors={competitors} rows={rows} cta={cta} icon_svgs={icon_svgs} rowStriping={rowStriping} />
-            <MobileCards   competitors={competitors} rows={rows} cta={cta} icon_svgs={icon_svgs} />
+            <MobileCards competitors={competitors} rows={rows} cta={cta} icon_svgs={icon_svgs} />
           </>
         )}
       </div>

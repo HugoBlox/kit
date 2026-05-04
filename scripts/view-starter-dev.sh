@@ -56,8 +56,25 @@ done
 # Run Hugo from the site dir so Tailwind CLI is discoverable
 cd "templates/$STARTER"
 
-# Ensure Tailwind CLI and Pagefind exist in starter (required for Hugo css.TailwindCSS and search indexing)
-if [ -f "package.json" ] && { [ ! -x "node_modules/.bin/tailwindcss" ] || [ ! -x "node_modules/.bin/pagefind" ]; }; then
+# Ensure Tailwind CLI and Pagefind exist in starter (required for Hugo css.TailwindCSS and search indexing).
+# Hugo >= 0.161 invokes @tailwindcss/cli as a Node script via require.resolve;
+# pnpm's default symlink layout (node_modules/@tailwindcss/cli -> .pnpm/...) defeats
+# that resolution and Hugo falls back to the .bin shell shim, erroring with
+# "binary tailwindcss is not a Node.js script". Templates pin node-linker=hoisted
+# in .npmrc to force a flat layout, but a stale install from before that pin
+# (or installed with a different linker) leaves a symlinked layout behind. Detect
+# both conditions and reinstall.
+needs_install=false
+if [ -f "package.json" ]; then
+    if [ ! -x "node_modules/.bin/tailwindcss" ] || [ ! -x "node_modules/.bin/pagefind" ]; then
+        needs_install=true
+    elif [ -L "node_modules/@tailwindcss/cli" ]; then
+        echo "⚠️  Detected stale symlink-style node_modules — reinstalling with hoisted layout..."
+        rm -rf node_modules pnpm-lock.yaml
+        needs_install=true
+    fi
+fi
+if [ "$needs_install" = true ]; then
     echo "📦 Installing starter dependencies for Hugo..."
     if command -v pnpm >/dev/null 2>&1; then
         pnpm install

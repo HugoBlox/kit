@@ -226,7 +226,7 @@
 
       {{/* EVENT METADATA */}}
       {{ if .Params.abstract | or (eq .Type "events") }}
-        <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
+        <div class="max-w-2xl grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
 
         {{ if .Params.abstract }}
           <div class="font-bold text-2xl">{{ i18n "abstract" }}</div>
